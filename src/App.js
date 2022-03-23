@@ -23,10 +23,10 @@ function App() {
         <Route exact path={'/teams'}>
           <Teams />
         </Route>
-        <Route path={'/teams/:id'}>
+        <Route path={'/players/:id'}>
           <PlayerDetail />
         </Route>
-        <Route path={'/players/:id'}>
+        <Route path={'/teams/:id'}>
           <TeamDetail />
         </Route>
       </Switch>
