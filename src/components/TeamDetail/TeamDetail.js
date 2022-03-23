@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchTeamsById } from '../../services/teams';
 
 export default function TeamDetail() {
-  const [team, setTeam] = useState({});
+  const [team, setTeam] = useState(null);
   const id = useParams().id;
 
   useEffect(() => {
@@ -19,6 +19,8 @@ export default function TeamDetail() {
     fetch();
   }, [id]);
 
+  if (!team) return <div>Loading....</div>;
+
   return (
     <div>
       <Link to={'/teams'}>{'<<<<'}</Link>
@@ -28,11 +30,11 @@ export default function TeamDetail() {
       </h3>
       <h3>
         Players:
-        {/* <ul>
+        <ul>
           {team.players.map((item) => (
             <li key={item.id}>{`${item.name}, ${item.position}`}</li>
           ))}
-        </ul> */}
+        </ul>
       </h3>
     </div>
   );
