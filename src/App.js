@@ -17,17 +17,17 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path={'/players'}>
-          <Players />
-        </Route>
-        <Route exact path={'/teams'}>
-          <Teams />
-        </Route>
         <Route path={'/players/:id'}>
           <PlayerDetail />
         </Route>
         <Route path={'/teams/:id'}>
           <TeamDetail />
+        </Route>
+        <Route path={'/players'}>
+          <Players />
+        </Route>
+        <Route path={'/teams'}>
+          <Teams />
         </Route>
       </Switch>
     </BrowserRouter>

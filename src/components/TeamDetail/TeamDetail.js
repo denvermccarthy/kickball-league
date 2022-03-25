@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { fetchTeamsById } from '../../services/teams';
@@ -32,7 +33,12 @@ export default function TeamDetail() {
         Players:
         <ul>
           {team.players.map((item) => (
-            <li key={item.id}>{`${item.name}, ${item.position}`}</li>
+            <li key={item.id}>
+              <NavLink exact to={`/players/${item.id}`}>
+                {item.name}
+              </NavLink>
+              , {item.position}
+            </li>
           ))}
         </ul>
       </h3>

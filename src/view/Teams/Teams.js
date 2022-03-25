@@ -18,10 +18,6 @@ export default function Teams() {
 
   return (
     <div>
-      <Link exact to={'/'}>
-        {`<< Home`}
-      </Link>
-      <br />
       Teams:
       <ul>
         {teams.map((item) => (
