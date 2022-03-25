@@ -20,7 +20,7 @@ export default function TeamDetail() {
     fetch();
   }, [id]);
 
-  if (!team) return <div>Loading....</div>;
+  if (!team) return <div>Loading...</div>;
 
   return (
     <div>
